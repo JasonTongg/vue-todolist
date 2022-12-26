@@ -15,10 +15,21 @@
         <button @click="RemoveChecked">Remove Checked</button>
       </div>
     </div>
+    <h1>Gallery</h1>
+    <div class="imgContainer">
+      <img :src="image" alt="wallpaper" />
+      <img :src="image2" alt="wallpaper" />
+      <img :src="image3" alt="wallpaper" />
+      <img :src="image4" alt="wallpaper" />
+    </div>
   </div>
 </template>
 <script>
 import List from './components/Todo.vue';
+import image from './assets/background.webp';
+import image2 from './assets/background2.png';
+import image3 from './assets/background3.png';
+import image4 from './assets/background4.png';
 export default {
   name: 'TodoVue',
   data() {
@@ -27,6 +38,10 @@ export default {
         {id: 1, text: 'jason', status: false},
         {id: 2, text: 'toni', status: false},
       ],
+      image,
+      image2,
+      image3,
+      image4,
     };
   },
   methods: {
@@ -56,6 +71,24 @@ export default {
 };
 </script>
 <style scoped>
+img {
+  object-fit: cover;
+  width: 300px;
+  height: 300px;
+}
+.imgContainer {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  gap: 2rem;
+  padding: 1rem;
+  justify-items: center;
+  justify-content: center;
+}
+h1 {
+  margin-top: 1rem;
+  color: white;
+}
 .overlay {
   background-color: var(--primaryColor);
   width: 100vw;
@@ -63,6 +96,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 .container {
   padding: 1rem 2rem;
