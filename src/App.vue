@@ -15,7 +15,7 @@
         <button @click="RemoveChecked">Remove Checked</button>
       </div>
     </div>
-    <h1>Gallery</h1>
+    <h1 class="h1">Gallery</h1>
     <div class="imgContainer">
       <img :src="image" alt="wallpaper" />
       <img :src="image2" alt="wallpaper" />
@@ -85,7 +85,7 @@ img {
   justify-items: center;
   justify-content: center;
 }
-h1 {
+..h1 {
   margin-top: 1rem;
   color: white;
 }
